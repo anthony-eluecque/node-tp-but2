@@ -1,4 +1,4 @@
-const film = {
+const item = {
     "title":"Schéma film",
     "description":"Description d'un film",
     "properties":{
@@ -6,10 +6,17 @@ const film = {
             "type":"string",
             "format":"uuid"
         },
-        "name":{
+        "title":{
+            "type":"string"
+        },
+        "tmdb":{
             "type":"string"
         }
-    }   
+    },
+    "required":[
+        "title",
+        "id-tmdb"
+    ]
+    
 }
-
-module.exports = { film }
+module.exports = { item }
