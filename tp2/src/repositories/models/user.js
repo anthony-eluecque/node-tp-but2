@@ -1,6 +1,7 @@
 const schema_user = {
     "title":"Schéma User",
     "description":"Description d'un utilisateur ",
+    "type":"object",
     "properties":{
         "id":{
             "type":"string",
