@@ -1,19 +1,10 @@
-const express = require('express')
-const app = express()
-const port = 3000
-
 const {connectTodB} = require('./services/db/connection.js')
-const { insertOne, find, updateOne } = require('./services/db/crud.js')
+app = require("./routes/index.js")
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+const createServer = () => {
+  connectTodB()
+  app.listen(3000);
+  console.log('Ecoute le port 3000');
+}
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
-
-connectTodB()
-  .then(
-    // updateOne('template',{title:'test'},{$set:{title:'avatar'}})
-  )
+createServer()
