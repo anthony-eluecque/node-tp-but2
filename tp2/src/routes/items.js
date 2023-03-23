@@ -1,12 +1,12 @@
 const { Router } = require('express');
-const createUser = require('../controllers/createUser');
+const addItem = require('../controllers/addItem.js');
 const router = Router()
 const express = require('express')
 
 router.use(express.json());
 router.use(express.urlencoded({ extended: false }))
 
+router.post('/add',addItem);
 
-router.post('/create',createUser)
 
 module.exports = router;
