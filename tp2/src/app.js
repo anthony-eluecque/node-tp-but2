@@ -1,10 +1,14 @@
 const {connectTodB} = require('./services/db/connection.js')
 app = require("./routes/index.js")
+require('dotenv').config();
+
+
 
 const createServer = () => {
   connectTodB()
-  app.listen(3000);
-  console.log('Ecoute le port 3000');
+  const PORT = process.env.PORT || 3000;
+  app.listen(PORT);
+  console.log(`Ecoute le port ${PORT}`);
 }
 
 createServer()
