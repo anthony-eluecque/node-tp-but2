@@ -19,7 +19,7 @@ const schema_user = {
         "array-watchlists":{
             "type":"array",
             "items":{
-                "type":"strnig"
+                "type":"string"
             }
         }
     },
