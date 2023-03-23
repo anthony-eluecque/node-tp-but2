@@ -1,4 +1,4 @@
-const item = {
+const schema_item = {
     "title":"Schéma film",
     "description":"Description d'un film",
     "properties":{
@@ -9,7 +9,7 @@ const item = {
         "title":{
             "type":"string"
         },
-        "tmdb":{
+        "id-tmdb":{
             "type":"string"
         }
     },
@@ -19,4 +19,4 @@ const item = {
     ]
     
 }
-module.exports = { item }
+module.exports = { schema_item }
