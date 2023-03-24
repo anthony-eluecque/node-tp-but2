@@ -11,6 +11,9 @@ const schema_item = {
         },
         "id-tmdb":{
             "type":"string"
+        },
+        "genre":{
+            "type":"string"
         }
     },
     "required":[
