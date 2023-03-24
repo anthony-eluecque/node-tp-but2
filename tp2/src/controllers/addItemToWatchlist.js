@@ -6,9 +6,7 @@ const addItemToWatchlist = async (req,res) => {
 
     try{
         if (states.includes(req.query.state)){
-            console.log(states);
             item = await findOne('template',{'id':req.query.idItem});
-            console.log(item);
             const filter = {'id':req.query.idWatchlist};
             watchlist = await findOne('template',filter);
             const update = {$push:{'array-items':{'id':item.id,'state':req.query.state}}};
