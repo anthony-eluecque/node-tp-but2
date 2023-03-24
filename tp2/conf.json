@@ -1,0 +1,12 @@
+{
+    "tp2":
+    {
+        "databaseUrl": "mongodb://127.0.0.1:27017/antorak:antorak123/",
+        "databaseName": "watchlist"
+    },
+    "tables":{
+        "users":"users",
+        "watchlists":"watchlists",
+        "items":"items"
+    }
+}
