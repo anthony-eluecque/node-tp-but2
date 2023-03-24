@@ -23,10 +23,14 @@ const schema_watchlist = {
         },
         "id-proprietaire":{
             "type":"string"
+        },
+        "nom":{
+            "type":"string"
         }
     },
     "required":[
-        "items"
+        "id-proprietaire",
+        "nom"
     ],
 	"additionalProperties": false
 };
