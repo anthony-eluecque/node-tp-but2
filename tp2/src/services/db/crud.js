@@ -52,6 +52,7 @@ async function updateOne(collectionName,filter,update,options){
     try{
         const collection = getCollection(collectionName);
         const result = await collection.updateOne(filter,update,options);
+        return result;
     } catch (e) {
         console.log(`Erreur lors de l execution de la fonction updateOne avec les parametres suivants: ${filter}`);
         console.log(e);
