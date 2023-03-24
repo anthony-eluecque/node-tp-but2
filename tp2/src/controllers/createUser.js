@@ -4,6 +4,9 @@ const { insertOne } = require("../services/db/crud");
 const { generateUUID } = require("../repositories/utils/uuid");
 const { Validator, validate } = require("jsonschema");
 
+const conf = require("../../conf.json");
+const users = conf.tables.users
+
 const createUser = (req,res) => {
     user = {
         "id":generateUUID(),
@@ -14,7 +17,7 @@ const createUser = (req,res) => {
     }
     let v = new Validator();
     if (v.validate(user,schema_user).valid){
-        insertOne('template',user);
+        insertOne(users,user);
         return res.status(200).json(user);
     }
     return res.status(400).send("erreur");

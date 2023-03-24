@@ -3,7 +3,12 @@ const { schema_watchlist } = require("../repositories/models/watchlist");
 const { generateUUID } = require("../repositories/utils/uuid");
 const { updateOne, findOne, insertOne } = require("../services/db/crud");
 
-// 79fd0ff2-c524-4e09-b2e1-0b2a58c3f206
+const conf = require("../../conf.json");
+
+const users = conf.tables.users
+const watchlists = conf.tables.watchlists
+
+
 const createWatchlist = async (req,res) => {
     try{
         watchlist = {
@@ -19,9 +24,9 @@ const createWatchlist = async (req,res) => {
             const filter = {'id':req.query.proprietaire};
             const updated = {$push:{'array-watchlists':watchlist.id}};
 
-            await updateOne('template',filter,updated);
-            await insertOne('template',watchlist);
-            result = await findOne('template',{'id':req.query.proprietaire});
+            await updateOne(users,filter,updated);
+            await insertOne(watchlists,watchlist);
+            result = await findOne(users,{'id':req.query.proprietaire});
             return res.status(200).json(result);
         }
         return res.status(400).send("Conflits");

@@ -4,7 +4,7 @@ const conf = require("../../../conf.json");
 const url = conf.tp2.databaseUrl;
 const dbName = conf.tp2.databaseName;
 
-const uri = 'mongodb://127.0.0.1:27017/antorak:antorak123/'+dbName
+const uri = url+dbName
 
 // Create a new MongoClient
 const client = new MongoClient(uri);

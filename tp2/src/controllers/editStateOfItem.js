@@ -1,6 +1,7 @@
 const { findOne, updateOne } = require("../services/db/crud");
 const states = require("../repositories/models/states");
 
+const conf = require("../../conf.json");
 
 const editStateOfItem = async (req,res) => {
 

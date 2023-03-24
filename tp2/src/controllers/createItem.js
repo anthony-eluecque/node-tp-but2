@@ -4,6 +4,8 @@ const { schema_item } = require('../repositories/models/item');
 const { generateUUID } = require('../repositories/utils/uuid');
 const { insertOne } = require('../services/db/crud');
 
+const conf = require("../../conf.json");
+const items = conf.tables.items
 require('dotenv').config();
 
 const createItem = (req,res) => {
@@ -17,7 +19,7 @@ const createItem = (req,res) => {
             };
             let v = new Validator();
             if (v.validate(item,schema_item).valid){
-                insertOne('template',item);
+                insertOne(items,item);
                 return res.status(200).send(item);   
             }
             return res.status(400).send('Conflits');
