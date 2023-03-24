@@ -1,12 +1,12 @@
 const { Router } = require('express');
-const addItem = require('../controllers/addItem.js');
 const router = Router()
-const express = require('express')
+const express = require('express');
+const createItem = require('../controllers/createItem.js');
 
 router.use(express.json());
 router.use(express.urlencoded({ extended: false }))
 
-router.post('/add',addItem);
+router.post('/add',createItem);
 
 
 module.exports = router;
