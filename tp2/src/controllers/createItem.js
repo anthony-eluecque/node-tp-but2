@@ -7,7 +7,6 @@ const { insertOne } = require('../services/db/crud');
 require('dotenv').config();
 
 const createItem = (req,res) => {
-    // http://www.omdbapi.com/?t=Avatar&apikey=8b65660e
     const url = 'http://www.omdbapi.com/?t='+req.query.title+'&apikey='+ process.env.API_KEY
     axios.get(url)
         .then((response) =>{
