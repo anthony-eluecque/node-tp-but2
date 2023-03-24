@@ -1,7 +1,8 @@
 const express = require('express');
 const app = express();
 const users = require('./users.js')
-const items = require('./items.js')
+const items = require('./items.js');
+const watchlists = require('./watchlists.js');
 
 
 app.use(express.json());
@@ -13,6 +14,7 @@ app.get('/',(req,res) => {
 
 app.use('/users',users)
 app.use('/items',items)
+app.use('/watchlist',watchlists)
 
 module.exports = app
 
