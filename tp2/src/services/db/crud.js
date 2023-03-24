@@ -15,7 +15,7 @@ async  function  findOne(collectionName, query, options = {}) {
 async function find(collectionName, query, options = {}){
     try{
         const collection = getCollection(collectionName);
-        const result = await collection.find(query,options);
+        const result = await collection.find(query,options).toArray();
         return result;
     } catch (e) {
 		console.log(`Erreur lors de l execution de la fonction find avec les parametres suivants: ${query}`);

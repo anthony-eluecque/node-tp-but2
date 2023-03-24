@@ -4,8 +4,8 @@ const states = require("../repositories/models/states");
 
 const conf = require("../../conf.json");
 
-const items = conf.tables.items
-const watchlists = conf.tables.watchlists
+const items = conf.tables.items;
+const watchlists = conf.tables.watchlists;
 
 const addItemToWatchlist = async (req,res) => {
 

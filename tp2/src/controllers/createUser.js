@@ -5,7 +5,7 @@ const { generateUUID } = require("../repositories/utils/uuid");
 const { Validator, validate } = require("jsonschema");
 
 const conf = require("../../conf.json");
-const users = conf.tables.users
+const users = conf.tables.users;
 
 const createUser = (req,res) => {
     user = {

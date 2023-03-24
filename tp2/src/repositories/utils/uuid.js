@@ -4,4 +4,4 @@ const generateUUID = () => {
     return crypto.randomUUID();
 }
 
-module.exports = {generateUUID}
+module.exports = {generateUUID};

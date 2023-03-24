@@ -5,7 +5,7 @@ const { generateUUID } = require('../repositories/utils/uuid');
 const { insertOne } = require('../services/db/crud');
 
 const conf = require("../../conf.json");
-const items = conf.tables.items
+const items = conf.tables.items;
 require('dotenv').config();
 
 const createItem = (req,res) => {
