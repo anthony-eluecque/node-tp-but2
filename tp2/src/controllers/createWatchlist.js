@@ -5,8 +5,8 @@ const { updateOne, findOne, insertOne } = require("../services/db/crud");
 
 const conf = require("../../conf.json");
 
-const users = conf.tables.users
-const watchlists = conf.tables.watchlists
+const users = conf.tables.users;
+const watchlists = conf.tables.watchlists;
 
 
 const createWatchlist = async (req,res) => {

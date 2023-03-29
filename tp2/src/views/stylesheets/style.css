@@ -1,0 +1,33 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 10px;
+    background-color: teal;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.navigation a{
+    color: white;
+    text-decoration: None;
+    letter-spacing: 2px;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 14px 16px;
+}
+
+.navigation li{
+    display: inline-flex;
+    list-style: none;
+}
+
+.navigation li:hover{
+    background-color: rgb(46, 157, 157);
+    color: white;
+}
