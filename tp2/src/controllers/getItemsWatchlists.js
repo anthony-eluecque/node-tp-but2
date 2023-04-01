@@ -8,14 +8,20 @@ const watchlists = conf.tables.watchlists;
 const getItemsWatchlists = async(req,res) => {
 
     try{
-
-        const results = await find(watchlists,{'id':req.query.idWatchlist});
         const arrayItems = []
-
-        for (let i=0;i<results[0]['array-items'].length;i++){
-            let item = results[0]['array-items'][i]
-            const result = await findOne(items,{'id':item.id})
-            arrayItems.push(result);
+        let results = {}
+        if (req.query.idWatchlist){
+            results = await findOne(watchlists,{'id':req.query.idWatchlist});
+        }
+        if (req.query.nameWatchlist){
+            results = await findOne(watchlists,{'nom':req.query.nameWatchlist});
+        }
+        if (results){
+            for (let i=0;i<results['array-items'].length;i++){
+                let item = results['array-items'][i]
+                const result = await findOne(items,{'id':item.id})
+                arrayItems.push(result);
+            }   
         }
         return res.status(200).json(arrayItems);
 

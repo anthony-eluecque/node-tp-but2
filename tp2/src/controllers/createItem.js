@@ -10,7 +10,10 @@ require('dotenv').config();
 
 const createItem = async (req,res) => {
     try{
-        const url = 'http://www.omdbapi.com/?t='+req.query.title+'&apikey='+ process.env.API_KEY
+        let url = 'http://www.omdbapi.com/?t='+req.query.title+'&apikey='+ process.env.API_KEY
+        if (!req.query.title){
+            url = 'http://www.omdbapi.com/?t='+req.body.title+'&apikey='+ process.env.API_KEY
+        }
         axios.get(url)
             .then(async (response) =>{
                 const genres = response.data.Genre.split(', ')  
