@@ -1,0 +1,31 @@
+doctype html
+html(lang='en')
+ head
+    style
+          include ./stylesheets/style.css
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Mon API
+ body
+  nav 
+    ul.navigation
+      li 
+        a(href="/") Accueil 
+      li 
+        a(href="/user") Ajouter un Utilisateur
+      li 
+        a(href="/watchlist") Ajouter une watchlist
+      li 
+        a(href="/item") Ajouter un item à mongodb 
+      li 
+        a(href="/users/") Lister tous les utilisateurs 
+      li 
+        a(href="/items/filter/") Lister tous les items
+  h1 Gestion des items : 
+  br
+  h3 Ajouter un item à mongodb 
+  form(action="/items/add" method="post") 
+    label(for="title") Title :  
+    input(type="text", name="title" required)
+    input(type="submit" value="Ajouter")

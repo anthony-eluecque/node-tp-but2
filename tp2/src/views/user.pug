@@ -1,0 +1,39 @@
+doctype html
+html(lang="en")
+    head
+        style
+          include ./stylesheets/style.css
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title API ELUECQUE Anthony
+    body 
+        nav 
+            ul.navigation
+                li 
+                    a(href="/") Accueil 
+                li 
+                    a(href="/user") Ajouter un Utilisateur
+                li 
+                    a(href="/watchlist") Ajouter une watchlist
+                li 
+                    a(href="/item") Ajouter un item à mongodb 
+                li 
+                    a(href="/users/") Lister tous les utilisateurs 
+                li 
+                    a(href="/items/filter/") Lister tous les items
+        h1 Ajouter un utilisateur :
+        br
+        form(action="/users/create", method="post")
+
+            label(for="nom") Nom :   
+            input(type="text" name="nom" required)
+
+            label(for="prenom") Prénom :   
+            input(type="text" name="prenom" required)
+
+            label(for="mail") Mail :   
+            input(type="email", name="mail")
+
+            input(type="submit", value="Ajouter")
+        

@@ -1,17 +1,60 @@
 doctype html
 html(lang='en')
  head
-    title API ELUECQUE Anthony
     style
           include ./stylesheets/style.css
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Mon API
  body
   nav 
     ul.navigation
       li 
-        a(href="") Accueil 
+        a(href="/") Accueil 
       li 
-        a(href="") Ajouter un Utilisateur
+        a(href="/user") Ajouter un Utilisateur
       li 
-        a(href="") Ajouter une watchlist
-  div.container 
-    h1 Bienvenue sur mon API ! 
+        a(href="/watchlist") Ajouter une watchlist
+      li 
+        a(href="/item") Ajouter un item à mongodb 
+      li 
+        a(href="/users/") Lister tous les utilisateurs 
+      li 
+        a(href="/items/filter/") Lister tous les items
+  h1 Bienvenue sur mon API ! 
+  br
+  h3 Rechercher la liste des watchlists d'un utilisateur 
+  form(action="/users/user/watchlists" method="get") 
+    label(for="name") Nom d'utilisateur :  
+    input(type="text", name="name" placeholder="Anthony")
+    input(type="submit" value="Rechercher")
+
+  br
+  h3 Rechercher la liste des items dans une watchlist
+  form(action="/watchlists/watchlist/items" method="get") 
+    label(for="nameWatchlist") Nom de la watchlist :  
+    input(type="text", name="nameWatchlist" placeholder="Ma watchlist")
+    input(type="submit" value="Rechercher")
+  
+  br
+  h3 Liste des items du registre
+  form(action="/items/filter/" method="get") 
+    label(for="filter") Filtre sur les genres (limité à un seul filtre) :  
+    input(type="text", name="filter" placeholder="Action")
+    input(type="submit" value="Rechercher")
+
+  br
+
+  h3 Modifier l'état d'un item dans une watchlist
+  form(action="/watchlists/edit" method="post") 
+    label(for="nomWatchlist") Nom de la watchlist
+    input(type="text", name="nomWatchlist" placeholder="Action")
+    br
+    label(for="idItem") Id de l'item 
+    input(type="text", name="idItem")
+    br
+    label(for="state") Nouvelle état 
+    input(type="text" name="state")
+    br
+    input(type="submit" value="Rechercher")
