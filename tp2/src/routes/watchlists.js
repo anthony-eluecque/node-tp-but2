@@ -7,8 +7,8 @@ const deleteItem = require('../controllers/deleteItem');
 const editStateOfItem = require('../controllers/editStateOfItem');
 const getItemsWatchlists = require('../controllers/getItemsWatchlists');
 
-router.use(express.json());
 router.use(express.urlencoded({ extended: false }));
+router.use(express.json());
 
 router.post('/create',createWatchlist);
 router.post('/add',addItemToWatchlist);
